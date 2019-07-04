@@ -5,7 +5,8 @@ type User {
     installPlugin(name: String): PluginDetails
     uninstallPlugin(name: String): PluginDetails
     events: [EventMessage]!
-    rank: UserRank
+    rank: UserRank,
+    banner: String
 }
 
 type EventMessage {
@@ -101,14 +102,14 @@ type SupportTicket {
     messages: [SupportTicketMessage],
     state: String,
     category: String,
-    createdAt: String,
-    closedAt: String
+    createdAt: Long,
+    closedAt: Long
 }
 
 type SupportTicketMessage {
     sender: SupportTicketUser,
     message: String,
-    createdAt: String,
+    createdAt: Long,
     staff: Boolean
 }
 

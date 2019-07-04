@@ -9,6 +9,7 @@ import net.twasi.core.services.ServiceRegistry;
 import net.twasi.core.services.providers.DataService;
 import net.twasi.core.services.providers.PluginManagerService;
 import net.twasi.core.services.providers.config.ConfigService;
+import net.twasi.twitchapi.kraken.channels.response.ChannelDTO;
 import org.mongodb.morphia.annotations.Entity;
 
 import java.util.ArrayList;
@@ -35,6 +36,8 @@ public class User extends BaseEntity {
     private List<String> installedPlugins;
 
     private AccountStatus status;
+
+    private ChannelDTO channelInformation;
 
     private UserRank rank;
 
@@ -223,5 +226,13 @@ public class User extends BaseEntity {
             rank = UserRank.STREAMER;
         }
         return rank;
+    }
+
+    public ChannelDTO getChannelInformation() {
+        return channelInformation;
+    }
+
+    public void setChannelInformation(ChannelDTO channelInformation) {
+        this.channelInformation = channelInformation;
     }
 }
