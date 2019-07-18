@@ -9,10 +9,10 @@ import net.twasi.core.translations.renderer.TranslationRenderer;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class TwasiDependency extends TwasiPlugin {
+public abstract class TwasiDependency<T> extends TwasiPlugin<T> {
     private TwasiTranslation twasiTranslation = new TwasiTranslation(getClassLoader());
 
-    public Class<? extends TwasiUserPlugin> getUserPluginClass() {
+    public final Class<? extends TwasiUserPlugin> getUserPluginClass() {
         return null;
     }
 
